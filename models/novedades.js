@@ -18,4 +18,19 @@ novedades.list = (callback) => {
     };
 };
 
+novedades.detailNovedad = (codigoNovedad, callback) => {
+    if (connection) {
+        connection.query('SELECT * from productopromocion join catalogo ON catalogo.codigoCatalogo = productopromocion.codigoCatalogo join producto ON producto.codigoProducto = catalogo.codigoProducto where codigoNovedad ='+codigoNovedad,
+            (err, detailNovedad) => {
+                if (err) {
+                    throw err
+                }
+                else {
+                    callback(null, detailNovedad)
+                }
+            }
+        );
+    };
+};
+
 module.exports = novedades;

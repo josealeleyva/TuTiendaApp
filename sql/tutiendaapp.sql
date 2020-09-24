@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-09-2020 a las 01:45:32
+-- Tiempo de generación: 24-09-2020 a las 02:36:51
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.6
 
@@ -102,6 +102,13 @@ CREATE TABLE `productopromocion` (
   `codigoCatalogo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `productopromocion`
+--
+
+INSERT INTO `productopromocion` (`codigoProductoNoveda`, `precioPromocion`, `descuentoPromocion`, `codigoNovedad`, `codigoCatalogo`) VALUES
+(1, 30, 50, 1, 2);
+
 -- --------------------------------------------------------
 
 --
@@ -190,7 +197,7 @@ ALTER TABLE `producto`
 -- AUTO_INCREMENT de la tabla `productopromocion`
 --
 ALTER TABLE `productopromocion`
-  MODIFY `codigoProductoNoveda` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `codigoProductoNoveda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `tienda`

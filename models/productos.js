@@ -18,4 +18,19 @@ productos.list = (callback) => {
     };
 };
 
+productos.listExtended = (callback) => {
+    if (connection) {
+        connection.query('SELECT * FROM catalogo JOIN producto ON catalogo.codigoProducto = producto.codigoProducto join tienda ON tienda.codigoTienda = catalogo.codigoTienda',
+            (err, productos) => {
+                if (err) {
+                    throw err
+                }
+                else {
+                    callback(null, productos)
+                }
+            }
+        );
+    };
+};
+
 module.exports = productos;

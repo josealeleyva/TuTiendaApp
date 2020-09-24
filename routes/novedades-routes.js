@@ -9,4 +9,11 @@ router.get('/', (req, res)=>{
     });
 })
 
+router.get('/:idNovedad', (req, res)=>{
+    
+    novedades.detailNovedad(req.params.idNovedad, (err, detailNovedad)=>{
+        res.json(detailNovedad);
+    });
+})
+
 module.exports = router;
