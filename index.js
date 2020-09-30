@@ -25,9 +25,9 @@ app.use((req, res, next)=>{
 });
 
 //routes
-app.use(require('./routes/index'))
-app.use('/novedades',require('./routes/novedades-routes'))
-app.use('/productos',require('./routes/productos-routes'))
+app.use(require('./src/routes/index'))
+app.use('/novedades',require('./src/routes/novedades-routes'))
+app.use('/productos',require('./src/routes/productos-routes'))
 
 //Server listen
 app.listen(app.get('port'),()=>{
