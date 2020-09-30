@@ -20,7 +20,7 @@ novedades.list = (callback) => {
 
 novedades.detailNovedad = (codigoNovedad, callback) => {
     if (connection) {
-        connection.query('SELECT * from novedad JOIN productopromocion on productopromocion.codigoNovedad = novedad.codigoNovedad JOIN catalogo on catalogo.codigoCatalogo = productopromocion.codigoCatalogo JOIN producto on producto.codigoProducto = catalogo.codigoProducto WHERE novedad.codigoNovedad'+codigoNovedad,
+        connection.query('SELECT * from novedad JOIN productopromocion on productopromocion.codigoNovedad = novedad.codigoNovedad JOIN catalogo on catalogo.codigoCatalogo = productopromocion.codigoCatalogo JOIN producto on producto.codigoProducto = catalogo.codigoProducto WHERE novedad.codigoNovedad = '+codigoNovedad,
             (err, detailNovedad) => {
                 if (err) {
                     throw err
